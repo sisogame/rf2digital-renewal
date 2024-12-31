@@ -1,0 +1,281 @@
+.header {
+	position: fixed !important;
+	z-index: 10;
+	top: 0;
+	height: 5rem;
+	background: rgba(31, 40, 51, 0.2);
+	transition: all 0.4s;
+	&.sub {
+		background: #fff;
+		.gnb > li > a {
+			color: #000;
+			position: relative;
+			@include make-before{
+				position: absolute;
+				left: 50%;
+				 transform: translateX(-50%); bottom: 0;
+				width: 0; height: 3px; background: $main-color;
+				transition: all 0.4s ease-in-out;
+			}
+			&:hover{
+				@include make-before{
+					width: 110px;
+				}
+			}
+		}
+		.gnb > li .sub-menu {
+			top: 5.875rem;
+		}
+	}
+	&.on{
+		height: 4rem;
+		border-bottom: 1px solid rgba(0,0,0,0.2);
+   .gnb > li .sub-menu {
+			top: 3.96rem;
+	 }
+	}
+	&.on:not(.sub) {
+		background: rgba(0,0,0,0.9);
+		 border-bottom: 1px solid rgba(255, 255, 255, .2);
+		.gnb > li .sub-menu{
+			top: 3.875rem;
+		}
+	}
+	
+	.bg {
+		display: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.3);
+		z-index: 1;
+		&.on {
+			display: block;
+		}
+	}
+	.inner {
+		height: 100%;
+	}
+	.logo {
+		@include poa-y;
+		left: 0;
+		width: 9.875rem;
+		height: 2rem;
+		z-index: 1000;
+		a {
+			display: block;
+			height: 100%;
+			img {
+				width: 100%;
+			}
+		}
+	}
+	.gnb {
+		height: 100%;
+		display: flex;
+		align-items: center;
+		padding-left: 270px;
+		> li {
+			height: 100%;
+			&:last-of-type {
+				padding-right: 0;
+			}
+			> a {
+				height: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: flex-end;
+				padding: 0 4.1875rem;
+				color: #fff;
+				font-size: 1.25rem;
+				font-weight: 500;
+				position: relative;
+				z-index: 10;
+				transition: all 0.4s;
+
+				&:hover {
+					color: $main-color;
+				}
+			}
+			.sub-menu {
+				opacity: 0;
+				visibility: hidden;
+				transition: all 0.4s;
+				position: absolute;
+				top: 5.075rem;
+				background: #fff;
+				min-width: 13.75rem;
+				padding: 1.25rem;
+				border: 1px solid #ddd;
+				box-shadow: 3px 1px 6px rgba(0,0,0,0.1);
+				
+
+				li {
+					text-align: center;
+					a {
+						display: inline-block;
+						padding: 0.625rem 0rem;
+						color: #000;
+						&:hover {
+							color: $main-color;
+						}
+					}
+				}
+			}
+
+			&.on .sub-menu {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+	}
+	.mobile-nav {
+		position: absolute;
+		display: none;
+		right: 15px;
+		top: 54%;
+		transform: translateY(-50%);
+		z-index: 101;
+
+		.menu-toggle {
+			cursor: pointer;
+			span {
+				display: block;
+				width: 25px;
+				height: 2px;
+				margin-bottom: 4px;
+				background-color: #333;
+			}
+			span:nth-child(1) {
+				top: 0;
+				background: #fff;
+			}
+			span:nth-child(2) {
+				top: 10px;
+				background: #fff;
+			}
+			span:nth-child(3) {
+				bottom: 0;
+				background: #fff;
+			}
+			@at-root .header.sub .mobile-nav .menu-toggle span {
+				background: #333;
+			}
+			&.active {
+				span:nth-child(1) {
+					position: relative;
+					top: 7px;
+					transform: rotate(45deg);
+					background: #333;
+				}
+
+				span:nth-child(2) {
+					position: relative;
+					opacity: 0;
+				}
+
+				span:nth-child(3) {
+					position: relative;
+					bottom: 5px;
+					transform: rotate(-45deg);
+					background: #333;
+				}
+				@at-root .header .mobile-nav .menu-toggle.active span {
+					margin-bottom: 4px;
+				}
+			}
+		}
+	}
+	.mobile-menu {
+		background: #fff;
+		display: none; // 메뉴를 기본적으로 숨깁니다.
+		width: 100%;
+		position: relative;
+		z-index: 100;
+		padding-top: 5rem;
+		z-index: 2;
+		// width: calc(100% - 10px);
+		&.active {
+			@media(max-width:map-get($media-size,smallDesk)){
+				display: block;
+			}
+		}
+		> li {
+			position: relative;
+
+			&:nth-of-type(1){
+				border-top: 1px solid #ddd;
+			}
+
+			&:nth-of-type(2),&:nth-of-type(3) {
+				@include make-before {
+					position: absolute;
+					right: 15px;
+					top: 25px;
+					transform: translateY(-7%);
+					@include bg-url("img", "header-mobile-gnb-arw-down.png");
+					background-size: 16px 16px;
+					width: 20px;
+					height: 20px;
+				}
+				&.on {
+					@include make-before {
+						top: 20px;
+						transform: rotate(-180deg);
+					}
+				}
+			}
+			>a {
+				display: block;
+				width: 100%;
+				height: 100%;
+				padding: 20px 3vw;
+				text-decoration: none;
+				color: #333;
+				font-size: 1.5rem;
+				border-bottom: 1px solid #ddd;
+			}
+
+			.submenu {
+				display: none; // 서브메뉴를 기본적으로 숨깁니다.
+				// padding-left: 10px;
+				&.active {
+					display: block;
+				}
+				>li {
+					border-bottom: 1px solid #eee;
+					a {
+						display: block;
+						color: #555;
+						padding: 15px 3vw;
+						font-size: 1.3rem;
+						padding-left: calc(2vw + 15px);
+					}
+				}
+			}
+		}
+
+		.submenu-toggle {
+			cursor: pointer;
+		}
+	}
+}
+
+footer{
+	height: 44px;
+	background: rgba(0, 0, 0, 1);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	p{
+		font-size: 0.875rem;
+		color: #666666;
+	}
+	&.sub{
+		border-top: 1px solid #F1F1F1;
+		background: rgba(255, 255, 255, 0.5);
+		color: #666666;
+	}
+}

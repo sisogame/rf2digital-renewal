@@ -1,0 +1,113 @@
+@media(max-width:map-get($media-size,smallDesk)){
+  html{font-size: 15px;}
+  // .header{background: #fff;}
+  .header .gnb{display: none;}
+  .header .mobile-nav{display: block;}
+  .sub-layout{z-index: 1;}
+  .sub-layout .inner{padding: 0px 15px;}
+  // .sub-info{padding: 0 15px;}
+  .header .logo{left: 15px;}
+  .sub-layout{padding: 2rem 0;padding-top: 0;}
+  .sub-layout .sub-menu > ul{display: none;}
+  .sub-layout .sub-menu{top:4.9rem;z-index: 10;}
+  .sub-layout .mobile-sub-menu{display: block;width: 100%;height: 48px;top: 105px;background: #eee;border:none;    border-bottom: 1px solid #8d8d8d;box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px;cursor: pointer;z-index: 10; padding: 0 15px;}
+  .sub-layout .sub-menu .mobile-sub-menu option{height: 30px; font-size: 1.2rem;cursor: pointer;}
+  .sub-layout .inner{flex-direction: column;}
+  .sub-layout .sub-menu:before{display: none;}
+  .sub-layout .sub-menu{ flex:1;   margin-left: -15px;
+    width: calc(100% + 30px);}
+    .custom-bullet-list li{text-align: center;}
+  /* main */
+  #main #wrap>section{height: auto;min-height: auto;padding: 10rem 15px;}
+  #main #wrap > section:nth-of-type(1){height: 100vh;}
+  #main .box2 ul{flex-wrap: wrap;gap:43px;}
+  #main .box2 ul li{flex: 1 1 48%;}
+  #main .box2 ul li img{width: 7rem;}
+  #main .box2 ul li p.txt{max-width: 31rem;margin: 0 auto;}
+  #main .box3 ul:not(.off){flex-direction: column;}
+  #main .box3 .info{width: 100%;}
+  #main .box3 ul:not(.off) > li{transition: 0s;padding: 2rem 0;}
+  #main .box3 .off{text-align: center;display: flex;flex-direction: column;align-items:center;transition: 0s;}
+  #main .box4 .info{overflow-x: scroll;overflow-y: hidden;}
+  .floating-banner{right: 10px;}
+  /* sub */
+  .com-step{width: 100%;}
+  .com-step .title-wrap::before,.com-step .title-wrap::after,.com-step .info:after{display: none!important;}
+  .com-step-wrap li:nth-of-type(1),.com-step-wrap li:nth-of-type(2),.com-step-wrap li:nth-of-type(3),.com-step-wrap li:nth-of-type(4){right:auto}
+  .com-step .info{width:calc(100% - 10.3125rem);padding-left: 1.8125rem;}
+  .com-step .title-wrap{justify-content: center;}
+  .sub-banner .inner article h1{padding-left: 15px;}
+  .header.sub.on{height: 5rem;}
+  .custom-bullet-list{flex-direction: column;align-items:center;}
+  /* scroll */
+  .header.on{height: 5rem;}
+  #main .box3 .off{opacity:1; height: auto;visibility:visible;margin-top: 1.875em;}
+  section.box{overflow-x: hidden;}
+  .sub-info .solu-menu09 .tab-content img{
+    height: auto!important;
+  }
+  .sub-info .solu-menu09 .tab-list .tab-button{
+    font-size: 1.25rem !important;
+    word-break: break-word;
+    padding: 0 1rem!important;
+    line-height: 1.4!important;
+    font-weight: 500;
+    color: #fff;
+  }
+  .sub-info .solu-menu09 .tab-content .con-left-wrap .tit{
+    font-size: 3rem!important;
+  }
+  .sub-info .solu-menu09 .tab-content .con-left-wrap .txt li{
+    font-size: 1.5rem!important; font-weight: 500;
+  }
+  // section.box::before{
+  //   content: '';display: inline-block; height: 150px;
+  // }
+}
+@media(max-width:map-get($media-size,tablet)){
+  html{font-size: 14px;}
+  /* sub */
+  .com-step{height: 14rem;}
+  .com-card > li{flex:0 0 100%;}
+  section.box {padding-bottom: 2.75rem;}
+  
+}
+@media(max-width:map-get($media-size,largeMo)){
+  html{font-size: 12px;}
+  #navi{display: none;}
+  #main #wrap > section:nth-of-type(1){height: auto;}
+
+  #main #wrap > section{padding: 7rem -15rem;}
+  /* sub */
+  .com-step {height: 24rem;}
+  .com-step .info{justify-content: flex-start; padding-top: 20px;padding-left: 10px;padding-right: 10px;}
+  .com-card > li{padding-left: 10px;padding-right: 10px;}
+  //  main{overflow: hidden;}
+  .com-popup-wrap .com-popup{width: 92%;}
+
+  .sub-banner{background-position: right -200px center;}
+  #main .box3 ul:not(.off) > li .img{    background-size: 2.5rem!important;}
+  section.box::before{
+    content: "";
+    display: block;
+    height: 120px; /* 공간의 높이, 필요에 따라 조절 */
+    margin-top: -120px; /* 음수 마진으로 공간을 조절 */
+    visibility: hidden;
+  }
+  .aa.pb100{margin-bottom: 100px;}
+  .sub-info .solu-menu09 .tab-list .tab-button{
+    font-size: 1rem !important;
+    word-break: break-word;
+    padding: none!important;
+    line-height: 1.4!important;
+    font-weight: 500;
+    color: #fff;
+  }
+
+  .sub-info .solu-menu09 .tab-content .con-left-wrap .tit{
+    font-size: 2rem!important;
+  }
+  .sub-info .solu-menu09 .tab-content .con-left-wrap .txt li{
+    font-size: 1.2rem!important; font-weight: 500;
+  }
+}
