@@ -10297,7 +10297,13 @@ section.box { padding-bottom: 6.75rem}
 @media screen and (-webkit-min-device-pixel-ratio: 0) { select { font-size: 16px; color: block} 
  }
 
-.sub-banner { margin-top: 5rem; height: 12.5rem; background-repeat: no-repeat; background-size: cover; background-position: center center}
+.sub-banner {
+    margin-top: 5rem;
+    height: 12.5rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center
+}
 
 .sub-banner .inner { height: 100%; display: flex; align-items: center}
 
@@ -10448,7 +10454,7 @@ body.on { overflow-y: hidden}
 
 #main .box3 ul:not(.off) { display: flex; background: rgba(0, 0, 0, .45); align-items: center; justify-content: center; min-height: 45.625rem; align-items: stretch}
 
-#main .box3 ul:not(.off)>li { flex: 1; text-align: center; cursor: pointer; height: 45.625rem; flex-grow: 1; display: flex; align-items: center; justify-content: center; flex-direction: column; transition: all 1s; border: 1px solid rgba(255, 255, 255, .1)}
+#main .box3 ul:not(.off)>li { flex: 1; text-align: center; cursor: pointer; height: 45.625rem; flex-grow: 1; display: flex; align-items: center; justify-content: center; flex-direction: column; transition: all 0.5s; border: 1px solid rgba(255, 255, 255, .1)}
 
 #main .box3 ul:not(.off)>li:nth-of-type(1) .img { background-image: url(../img/ico01_off.svg); background-position: center; background-size: cover; background-position: "center"; background-size: auto; background-repeat: no-repeat}
 
@@ -10781,7 +10787,9 @@ body.on { overflow-y: hidden}
 
 .sub-info .intro-menu01 { text-align: center}
 
-.sub-info .intro-menu01 .intro-img02 { width: 100%; margin-top: 5rem}
+.sub-info .intro-menu01 .intro-img02 { width: 100%; 
+    margin-top: 5rem
+}
 
 .sub-info .intro-menu01 .intro-mo-img02 { display: none}
 

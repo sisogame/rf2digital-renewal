@@ -152,7 +152,7 @@ a {
 .com-title {
   font-size: 3rem;
   font-weight: 500;
-  color: #f29f05;
+  color: #FBB32E;
   text-align: center;
   margin-bottom: 3.4375rem;
   line-height: 1;
@@ -20657,7 +20657,8 @@ section.box {
 }
 .sub-banner {
   margin-top: 5rem;
-  height: 12.5rem;
+  /* height: 12.5rem; */
+  height: 15.375rem;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -20716,7 +20717,7 @@ section.box {
   top: 0.1875rem;
   height: calc(100% - 1.0125rem);
   width: 0.125rem;
-  background: #A265CA;
+  background: #FBB32E;
 }
 .sub-layout .sub-menu > ul {
   margin-top: -0.75rem;
@@ -20734,10 +20735,10 @@ section.box {
   white-space: nowrap;
 }
 .sub-layout .sub-menu > ul > li > a:hover {
-  color: #A265CA;
+  color: #FBB32E;
 }
 .sub-layout .sub-menu > ul > li.on {
-  color: #A265CA;
+  color: #FBB32E;
   position: relative;
 }
 .sub-layout .sub-menu > ul > li.on:before {
@@ -20746,13 +20747,13 @@ section.box {
   position: absolute;
   width: 0.9375rem;
   height: 0.9375rem;
-  background: #A265CA;
+  background: #FBB32E;
   border-radius: 50%;
   left: -0.3825rem;
   top: 0.9rem;
 }
 .sub-layout .sub-menu > ul > li.on > a {
-  color: #A265CA;
+  color: #FBB32E;
 }
 .sub-layout .sub-menu > ul > li.on .level2-menu {
   opacity: 1;
@@ -21071,7 +21072,7 @@ body.on {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  transition: all 1s;
+  transition: all 0.5s;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 #main .box3 ul:not(.off) > li:nth-of-type(1) .img {
@@ -21294,7 +21295,7 @@ body.on {
 @media (min-width: 1367px) {
   #main .box3 ul:not(.off) > li:hover {
     flex: 3;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.5);
   }
   #main .box3 ul:not(.off) > li:hover > div {
     position: relative;
@@ -21309,7 +21310,7 @@ body.on {
     font-size: 1.5rem;
   }
   #main .box3 ul:not(.off) > li:hover .img {
-    background: #f29f05;
+    background: #B874E8;
     margin-bottom: 4.0625rem;
   }
 }
@@ -21335,7 +21336,7 @@ body.on {
   width: 0.4375rem;
   height: 0.4375rem;
   left: 0;
-  background: #bf939b;
+  background: #CDCBCE;
   border-radius: 50%;
 }
 #main .box3 .off li:last-of-type {
@@ -21873,7 +21874,7 @@ body.on {
 }
 .sub-info .intro-menu01 .intro-img02 {
   width: 100%;
-  margin-top: 5rem;
+  /* margin-top: 5rem; */
 }
 .sub-info .intro-menu01 .intro-mo-img02 {
   display: none;
@@ -21903,20 +21904,23 @@ body.on {
 }
 .sub-info .intro-menu02 .intro-advantages-wrap .intro-advantages__item {
   height: 22.8125rem;
-  background: #272524;
+  background: #3F2E56;
   padding: 1.5625rem 1.875rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+
+
 .sub-info .intro-menu02 .intro-advantages-wrap .intro-advantages__item .icon {
-  width: 5.625rem;
-  height: 5.625rem;
-  background: no-repeat center center/100%;
+  width:  5.625rem;
+  height:5.625rem;
+  background:  no-repeat center center/100%;
 }
 .sub-info .intro-menu02 .intro-advantages-wrap .intro-advantages__item .ico-perfor {
-  background-image: url(../img/ico06.svg);
+  background-image: url(../img/ico06.svg) ;
+
 }
 .sub-info .intro-menu02 .intro-advantages-wrap .intro-advantages__item .ico-proven {
   background-image: url(../img/ico07.svg);
@@ -22538,3 +22542,24 @@ body.on {
 /*이찬용*/
 
 /*# sourceMappingURL=ui.css.map */
+
+.img-bg{
+
+  background: url('../img/img_bg.png');
+  background-repeat: repeat;
+  /* background-size: cover; */
+  background-position: top center;
+  height: 100%;
+  position: relative;
+  isolation: isolate;
+}
+.img-bg::after {
+  content: '';
+  position: absolute;
+  background: #000;
+  z-index: -1;
+  inset: 0;
+  opacity: 0.3;
+}
+
+.sub-info .intro-menu02 .intro-advantages-wrap .intro-advantages__item .circle-dark{background-color: #030303;width: 120px; height: 120px; border-radius: 50%;display: flex;align-items: center;justify-content: center;}

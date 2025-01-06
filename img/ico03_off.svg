@@ -13,10 +13,10 @@
     <line id="선_23" data-name="선 23" x2="5.184" transform="translate(8.727 11.603)" fill="#fff"/>
     <path id="패스_3970" data-name="패스 3970" d="M14.522,13.838H9.338a1.385,1.385,0,1,1,0-2.77h5.184a1.385,1.385,0,1,1,0,2.77" transform="translate(-0.611 -0.85)" fill="#fff"/>
     <line id="선_24" data-name="선 24" x2="16.077" transform="translate(18.059 11.603)" fill="#fff"/>
-    <path id="패스_3971" data-name="패스 3971" d="M35.523,13.838H19.446a1.385,1.385,0,1,1,0-2.77H35.523a1.385,1.385,0,1,1,0,2.77" transform="translate(-1.387 -0.85)" fill="#f29f05"/>
+    <path id="패스_3971" data-name="패스 3971" d="M35.523,13.838H19.446a1.385,1.385,0,1,1,0-2.77H35.523a1.385,1.385,0,1,1,0,2.77" transform="translate(-1.387 -0.85)" fill="#b874e8"/>
     <line id="선_25" data-name="선 25" x2="5.184" transform="translate(8.727 33.397)" fill="#fff"/>
     <path id="패스_3972" data-name="패스 3972" d="M14.522,37.444H9.338a1.385,1.385,0,1,1,0-2.77h5.184a1.385,1.385,0,1,1,0,2.77" transform="translate(-0.611 -2.662)" fill="#fff"/>
     <line id="선_26" data-name="선 26" x2="16.077" transform="translate(18.059 33.397)" fill="#fff"/>
-    <path id="패스_3973" data-name="패스 3973" d="M35.523,37.444H19.446a1.385,1.385,0,1,1,0-2.77H35.523a1.385,1.385,0,1,1,0,2.77" transform="translate(-1.387 -2.662)" fill="#f29f05"/>
+    <path id="패스_3973" data-name="패스 3973" d="M35.523,37.444H19.446a1.385,1.385,0,1,1,0-2.77H35.523a1.385,1.385,0,1,1,0,2.77" transform="translate(-1.387 -2.662)" fill="#b874e8"/>
   </g>
 </svg>
