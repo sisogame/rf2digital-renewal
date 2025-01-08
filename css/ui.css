@@ -181,6 +181,7 @@ a {
   padding-left: 10px;
   word-break: keep-all;
   font-size: 16px;
+  color: #827E86;
 }
 
 .custom-bullet-list li:before {
