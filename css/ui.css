@@ -20726,6 +20726,7 @@ html {
 
 section.box {
   padding-bottom: 6.75rem;
+  /* padding-bottom: 7rem; */
 }
 
 /* Targeting WebKit-based browsers (like Safari on iPhone and iPad) */

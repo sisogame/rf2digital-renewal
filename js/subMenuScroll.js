@@ -38,7 +38,7 @@
 				len = $$level2_li.length;
 
 				for (let i = 0; i < len; i++) {
-					let insertCode = $$wrap_div[i].offsetTop + 310;
+					let insertCode = $$wrap_div[i].offsetTop + 265;
 					posArr.push(insertCode);
 				}
 
@@ -50,7 +50,7 @@
 				len = $$subMenu_li.length;
 
 				for (let i = 0; i < len; i++) {
-					let insertCode = $$wrap_div[i].offsetTop + 310;
+					let insertCode = $$wrap_div[i].offsetTop + 265;
 					posArr.push(insertCode);
 				}
 
