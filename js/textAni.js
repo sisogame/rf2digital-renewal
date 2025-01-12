@@ -37,3 +37,68 @@ if (subBannerElement) {
 
 
 }
+
+// Mask animation 
+
+(function () {
+const hero = document.querySelector(".hero-secondary")
+const tl = gsap.timeline({
+  delay: 1
+})
+
+tl.to(hero, {
+  "--maskSize1": "4%",
+  duration: 0.5,
+  ease: "back.out(2)",
+}).to(hero, {
+  "--maskSize2": "10%",
+  "--maskSize3": "calc(10% + 0.1rem)",
+  duration: 0.5,
+  delay: 0.5,
+  ease: "back.out(2)",
+})
+
+// window.addEventListener("mousemove", (e) => {
+//   const {
+//     clientX,
+//     clientY
+//   } = e
+//   const x = Math.round((clientX / window.innerWidth) * 100)
+//   const y = Math.round((clientY / window.innerHeight) * 100)
+
+//   gsap.to(hero, {
+//     "--x": `${x}%`,
+//     "--y": `${y}%`,
+//     duration: 0.3,
+//     // ease: "sine.out",
+//      ease: "power2.out",
+//   })
+// })
+
+  
+  window.addEventListener("mousemove", (e) => {
+    // 스크롤 위치를 고려한 계산
+    const {
+      clientX,
+      clientY,
+      pageY
+    } = e
+    const scrollY = window.scrollY
+
+    // x는 viewport 너비 기준
+    const x = Math.round((clientX / window.innerWidth) * 100)
+
+    // y는 전체 문서 높이 기준으로 계산
+    const y = Math.round(((clientY + scrollY) / document.documentElement.scrollHeight) * 100)
+
+    gsap.to(hero, {
+      "--x": `${x}%`,
+      "--y": `${y}%`,
+      duration: 0.3,
+      ease: "sine.out",
+    })
+  })
+
+})();
+  
+

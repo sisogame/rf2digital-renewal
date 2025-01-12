@@ -3,7 +3,7 @@ AOS.init({
   // duration: 1000, // 모든 AOS 애니메이션의 지속 시간을 1초(1000밀리초)로 설정
 
   duration: 600, // 애니메이션 지속 시간 (밀리초)
-  easing: "ease-in-ou", // 애니메이션의 이징 함수
+  easing: "ease-in-out", // 애니메이션의 이징 함수
   delay: 0, // 애니메이션 지연 시간 (밀리초)
   offset: 120, // 스크롤 감지의 시작 위치 (픽셀)
 
