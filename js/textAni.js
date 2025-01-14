@@ -47,12 +47,12 @@ const tl = gsap.timeline({
 })
 
 tl.to(hero, {
-  "--maskSize1": "4%",
+  "--maskSize1": "3%",
   duration: 0.5,
   ease: "back.out(2)",
 }).to(hero, {
-  "--maskSize2": "10%",
-  "--maskSize3": "calc(10% + 0.1rem)",
+  "--maskSize2": "6%",
+  "--maskSize3": "calc(6% + 1px)",
   duration: 0.5,
   delay: 0.5,
   ease: "back.out(2)",
