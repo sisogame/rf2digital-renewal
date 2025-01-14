@@ -58,23 +58,6 @@ tl.to(hero, {
   ease: "back.out(2)",
 })
 
-// window.addEventListener("mousemove", (e) => {
-//   const {
-//     clientX,
-//     clientY
-//   } = e
-//   const x = Math.round((clientX / window.innerWidth) * 100)
-//   const y = Math.round((clientY / window.innerHeight) * 100)
-
-//   gsap.to(hero, {
-//     "--x": `${x}%`,
-//     "--y": `${y}%`,
-//     duration: 0.3,
-//     // ease: "sine.out",
-//      ease: "power2.out",
-//   })
-// })
-
   
   window.addEventListener("mousemove", (e) => {
     // 스크롤 위치를 고려한 계산
@@ -102,3 +85,57 @@ tl.to(hero, {
 })();
   
 
+//Blob Mouse Trail
+(function () {
+const blob = document.getElementById('blob');
+
+document.body.onpointermove = event => {
+  const {
+    clientX,
+    clientY
+  } = event;
+
+  blob.animate({
+    left: `${clientX}px`,
+    top: `${clientY}px`
+  }, {
+    duration: 3000,
+    fill: 'forwards'
+  });
+  }
+})();
+
+
+
+// 즉시 실행 함수로 변경하여 모든 페이지에서 독립적으로 실행되도록 함
+// (function () {
+//   // DOM이 로드된 후 실행
+//   document.addEventListener('DOMContentLoaded', function () {
+//     const blob = document.getElementById('blob');
+
+//     // blob 요소가 있는지 확인
+//     if (!blob) {
+//       console.log('Blob element not found');
+//       return;
+//     }
+
+//     // 애니메이션 초기화
+//     document.body.onpointermove = event => {
+//       const {
+//         clientX,
+//         clientY
+//       } = event;
+
+//       blob.animate({
+//         left: `${clientX}px`,
+//         top: `${clientY}px`
+//       }, {
+//         duration: 3000,
+//         fill: 'forwards'
+//       });
+//     }
+
+//     // 회전 애니메이션이 CSS에 정의되어 있음을 확인
+//     console.log('Blob animation initialized');
+//   });
+// })();
