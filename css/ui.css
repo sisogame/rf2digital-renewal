@@ -10341,7 +10341,7 @@ section.box { padding-bottom: 6.75rem; /* padding-bottom: 7rem; */}
 
 .sub-layout .sub-menu>ul>li { padding-left: 1.375rem; cursor: pointer; } 
 
-.sub-layout .sub-menu>ul>li>a { display: inline-block; padding: 0.75rem 0; font-size: 1.15rem; color: #666; font-weight: 500; white-space: nowrap; } 
+.sub-layout .sub-menu>ul>li>a { display: inline-block; padding: 0.75rem 0; font-size: 1.15rem; color: #B0B0B0; font-weight: 500; white-space: nowrap; } 
 
 .sub-layout .sub-menu>ul>li>a:hover { color: #FBB32E; } 
 
@@ -10357,7 +10357,7 @@ section.box { padding-bottom: 6.75rem; /* padding-bottom: 7rem; */}
 
 .sub-layout .sub-menu>ul>li .level2-menu li { padding: 0.3125rem 0; } 
 
-.sub-layout .sub-menu>ul>li .level2-menu li a { position: relative; display: inline-block; color: #817C83; padding: 0.25rem 0; font-size: 0.975rem; font-weight: 500; } 
+.sub-layout .sub-menu>ul>li .level2-menu li a { position: relative; display: inline-block; color: #888; padding: 0.25rem 0; font-size: 0.975rem; font-weight: 500; } 
 
 .sub-layout .sub-menu>ul>li .level2-menu li a:before { content: ""; display: block; position: absolute; left: -1.1875rem; top: 50%; transform: translateY(-50%); width: 0.4375rem; height: 2px; background: #666; } 
 
@@ -10433,7 +10433,9 @@ body.on { overflow-y: hidden; }
 
 #main .box3 { background: url("../img/bg-main03.jpg"); background-repeat: no-repeat; background-size: cover; background-position: center center; height: 100vh; min-height: 60rem; } 
 
-#main .box4 { background: url("../img/bg-main04.jpg"); background-repeat: no-repeat; background-size: cover; background-position: center center; height: 100vh; min-height: 60rem; } 
+#main .box4 { 
+    /* background: url("../img/bg-main04.jpg");  */
+    background-repeat: no-repeat; background-size: cover; background-position: center center; height: 100vh; min-height: 60rem;background-color: #0A0810; } 
 
 #main .box1 p { color: #fff; font-size: 1.25rem; margin-bottom: 2.5rem; text-align: center; line-height: 1.6; word-break: keep-all; } 
 
@@ -11211,7 +11213,7 @@ height: auto; width: 100%; }
 
 
 /* blob animation */
-:root {--blob-color: radial-gradient(at 0% 0%, yellow, #009966, purple);--blob-size: 400px; } 
+:root {--blob-color: radial-gradient(at 0% 0%, #F2C7AE, #BF939F, #955FCA, #68438E);--blob-size: 400px; } 
 
 
 #blob { animation: rotate360 20s infinite; background: var(--blob-color); filter: blur(calc(var(--blob-size)/2.15));
