@@ -7,11 +7,11 @@ if (subBannerElement) {
   const boxs = document.querySelectorAll('article');
 
   //box를 반복
-  boxs.forEach((box,idx)=>{
+  boxs.forEach((box, idx) => {
 
-    setTimeout(function(){
+    setTimeout(function () {
       box.classList.add("on");
-    },10)
+    }, 10)
 
     const h1 = box.querySelector('h1');
     const txt = h1.innerText;
@@ -19,7 +19,7 @@ if (subBannerElement) {
     let tags = '';
 
     // 각 ariticle 안쪽의 h1 문자를 다시 반복돌면서 span으로 감싸는 문자열 생성
-    for(const el of txt){
+    for (const el of txt) {
       tags += `<span>${el}</span>`
     }
 
@@ -29,7 +29,7 @@ if (subBannerElement) {
     // h1안쪽의 span요소의 갯수만큼 반복을 돌면서 transitionDelay값 설정
     const $$span = h1.querySelectorAll('span');
 
-    $$span.forEach(function(el,idx){
+    $$span.forEach(function (el, idx) {
       el.style.transitionDelay = 0.05 * idx + 's';
     });
 
@@ -41,24 +41,24 @@ if (subBannerElement) {
 // Mask animation 
 
 (function () {
-const hero = document.querySelector(".hero-secondary")
-const tl = gsap.timeline({
-  delay: 1
-})
+  const hero = document.querySelector(".hero-secondary")
+  const tl = gsap.timeline({
+    delay: 1
+  })
 
-tl.to(hero, {
-  "--maskSize1": "3%",
-  duration: 0.5,
-  ease: "back.out(2)",
-}).to(hero, {
-  "--maskSize2": "6%",
-  "--maskSize3": "calc(6% + 1px)",
-  duration: 0.5,
-  delay: 0.5,
-  ease: "back.out(2)",
-})
+  tl.to(hero, {
+    "--maskSize1": "3%",
+    duration: 0.5,
+    ease: "back.out(2)",
+  }).to(hero, {
+    "--maskSize2": "6%",
+    "--maskSize3": "calc(6% + 1px)",
+    duration: 0.5,
+    delay: 0.5,
+    ease: "back.out(2)",
+  })
 
-  
+
   window.addEventListener("mousemove", (e) => {
     // 스크롤 위치를 고려한 계산
     const {
@@ -83,59 +83,88 @@ tl.to(hero, {
   })
 
 })();
-  
+
 
 //Blob Mouse Trail
 (function () {
-const blob = document.getElementById('blob');
+  const blob = document.getElementById('blob');
 
-document.body.onpointermove = event => {
-  const {
-    clientX,
-    clientY
-  } = event;
+  document.body.onpointermove = event => {
+    const {
+      clientX,
+      clientY
+    } = event;
 
-  blob.animate({
-    left: `${clientX}px`,
-    top: `${clientY}px`
-  }, {
-    duration: 3000,
-    fill: 'forwards'
-  });
+    blob.animate({
+      left: `${clientX}px`,
+      top: `${clientY}px`
+    }, {
+      duration: 3000,
+      fill: 'forwards'
+    });
   }
 })();
 
 
+// zoom-image-scroll
+(function () {
 
-// 즉시 실행 함수로 변경하여 모든 페이지에서 독립적으로 실행되도록 함
-// (function () {
-//   // DOM이 로드된 후 실행
-//   document.addEventListener('DOMContentLoaded', function () {
-//     const blob = document.getElementById('blob');
 
-//     // blob 요소가 있는지 확인
-//     if (!blob) {
-//       console.log('Blob element not found');
-//       return;
-//     }
+  const pinnedImages = document.querySelectorAll('.pinned-image');
 
-//     // 애니메이션 초기화
-//     document.body.onpointermove = event => {
-//       const {
-//         clientX,
-//         clientY
-//       } = event;
+  pinnedImages.forEach(pinnedImage => {
+    const container = pinnedImage.querySelector('.pinned-image__container');
+    const image = container.querySelector('img');
+    const overlay = container.querySelector('.pinned-image__container-overlay');
+    const quote = pinnedImage.querySelector('.pinned-image__quote');
 
-//       blob.animate({
-//         left: `${clientX}px`,
-//         top: `${clientY}px`
-//       }, {
-//         duration: 3000,
-//         fill: 'forwards'
-//       });
-//     }
+    const tl = gsap.timeline({
+      paused: true
+    });
+    tl.to(container, {
+      scale: 1.1,
+    }, 0);
+    tl.from(quote, {
+      autoAlpha: 0,
+    }, 0);
+    tl.from(overlay, {
+      autoAlpha: 0,
+    }, 0);
+    const trigger = ScrollTrigger.create({
+      animation: tl,
+      trigger: pinnedImage,
+      start: "top top",
+      markers: false,
+      pin: true,
+      scrub: true,
 
-//     // 회전 애니메이션이 CSS에 정의되어 있음을 확인
-//     console.log('Blob animation initialized');
+
+      // end: "+=50px", // // 원래 요소 높이 + 50px , end: "+=50px"로 설정하면 pin-spacer의 전체 높이는 원래 요소의 높이 + 50px가 됩니다.예를 들어:만약.pinned - image의 높이가 800 px이라면pin - spacer의 최종 높이는 850 px(800 px + 50 px) 가 됩니다
+      //  pinSpacing: true,
+
+      // end: "+=600px", // 필요한 경우 스크롤 길이 설정
+      // anticipatePin: 1
+
+    });
+  });
+
+})();
+
+
+
+
+
+
+
+// AOS 초기화
+// AOS.init();
+
+// window.addEventListener('scroll', function () {
+//   const scroll = Math.min(window.pageYOffset || document.documentElement.scrollTop, 530);
+//   const zoomContent = document.querySelectorAll('.zoom__content');
+
+//   zoomContent.forEach(content => {
+//     content.style.transform = `translate(-50%, -50%) scale(${(100 + scroll/5)/100})`;
 //   });
-// })();
+// });
+

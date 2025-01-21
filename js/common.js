@@ -38,7 +38,11 @@ window.addEventListener("scroll", function () {
         e.preventDefault();
         if(e.target.closest("li").querySelector("a") === el){
           let scollDiv = document.querySelector('#' + el.getAttribute("href"));
-          let scollValue = scollDiv.offsetTop + 265;
+          //  let scollValue = scollDiv.offsetTop + 265;
+           let scollValue = scollDiv.offsetTop + 1670;
+
+           // viewport height의 100vh를 적용
+          // let scrollValue = scrollDiv.offsetTop + window.innerHeight;
           window.scrollTo({
             top: scollValue,
             behavior: "smooth", // 부드러운 스크롤 효과
@@ -48,3 +52,31 @@ window.addEventListener("scroll", function () {
     });
   }
 })();
+
+
+
+
+// (function () {
+//   const $subMenu = document.querySelector('.sub-menu');
+//   if ($subMenu) {
+//     const $$link = document.querySelectorAll('.sub-layout .sub-menu > ul > li > a');
+
+//     $$link.forEach(function (el) {
+//       el.addEventListener("click", (e) => {
+//         e.preventDefault();
+
+//         if (e.target.closest("li").querySelector("a") === el) {
+//           // 스크롤할 대상 요소 선택
+//           let scrollDiv = document.querySelector('#' + el.getAttribute("href"));
+//           // 뷰포트 높이를 가져와서 계산
+//           let scrollValue = scrollDiv.offsetTop + window.innerHeight;
+
+//           window.scrollTo({
+//             top: scrollValue,
+//             behavior: "smooth" // 부드러운 스크롤 효과
+//           });
+//         }
+//       });
+//     });
+//   }
+// })();

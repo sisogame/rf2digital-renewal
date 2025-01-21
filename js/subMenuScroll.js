@@ -32,13 +32,16 @@
 		let posArr, len;
 
 		function 각박스의세로위치값() {
+
+			
 			// 서브메뉴가 있을경우
 			if ($subMenu) {
 				posArr = [];
 				len = $$level2_li.length;
 
 				for (let i = 0; i < len; i++) {
-					let insertCode = $$wrap_div[i].offsetTop + 265;
+					// let insertCode = $$wrap_div[i].offsetTop + 265;
+					let insertCode = $$wrap_div[i].offsetTop + 1670;
 					posArr.push(insertCode);
 				}
 
@@ -50,7 +53,8 @@
 				len = $$subMenu_li.length;
 
 				for (let i = 0; i < len; i++) {
-					let insertCode = $$wrap_div[i].offsetTop + 265;
+					// let insertCode = $$wrap_div[i].offsetTop + 265;
+					let insertCode = $$wrap_div[i].offsetTop + 1670;
 					posArr.push(insertCode);
 				}
 
