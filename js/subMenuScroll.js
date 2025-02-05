@@ -41,7 +41,7 @@
 
 				for (let i = 0; i < len; i++) {
 					// let insertCode = $$wrap_div[i].offsetTop + 265;
-					let insertCode = $$wrap_div[i].offsetTop + 1670;
+					let insertCode = $$wrap_div[i].offsetTop + 420;
 					posArr.push(insertCode);
 				}
 
@@ -54,7 +54,7 @@
 
 				for (let i = 0; i < len; i++) {
 					// let insertCode = $$wrap_div[i].offsetTop + 265;
-					let insertCode = $$wrap_div[i].offsetTop + 1670;
+					let insertCode = $$wrap_div[i].offsetTop + 420;
 					posArr.push(insertCode);
 				}
 

@@ -39,7 +39,7 @@ window.addEventListener("scroll", function () {
         if(e.target.closest("li").querySelector("a") === el){
           let scollDiv = document.querySelector('#' + el.getAttribute("href"));
           //  let scollValue = scollDiv.offsetTop + 265;
-           let scollValue = scollDiv.offsetTop + 1670;
+           let scollValue = scollDiv.offsetTop + 420;
 
            // viewport height의 100vh를 적용
           // let scrollValue = scrollDiv.offsetTop + window.innerHeight;

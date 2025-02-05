@@ -107,64 +107,47 @@ if (subBannerElement) {
 
 
 // zoom-image-scroll
+
 (function () {
+  gsap.registerPlugin(ScrollTrigger);
 
+  // 기본 배너 애니메이션
+  gsap.fromTo(".banner .background", {
+    scale: 1.25,
+    opacity: 1
+  }, {
+    scale: 1,
+    opacity: 1,
+    duration: 6.5,
+    ease: "power1.inOut"
+  });
 
-  const pinnedImages = document.querySelectorAll('.pinned-image');
-
-  pinnedImages.forEach(pinnedImage => {
-    const container = pinnedImage.querySelector('.pinned-image__container');
-    const image = container.querySelector('img');
-    const overlay = container.querySelector('.pinned-image__container-overlay');
-    const quote = pinnedImage.querySelector('.pinned-image__quote');
-
-    const tl = gsap.timeline({
-      paused: true
-    });
-    tl.to(container, {
-      scale: 1.1,
-    }, 0);
-    tl.from(quote, {
-      autoAlpha: 0,
-    }, 0);
-    tl.from(overlay, {
-      autoAlpha: 0,
-    }, 0);
-    const trigger = ScrollTrigger.create({
-      animation: tl,
-      trigger: pinnedImage,
+  // 배경 패럴랙스
+  gsap.to(".banner .background", {
+    yPercent: 50,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".banner",
       start: "top top",
-      markers: false,
-      pin: true,
-      scrub: true,
+      end: "bottom top",
+      scrub: true
+    }
+  });
 
-
-      // end: "+=50px", // // 원래 요소 높이 + 50px , end: "+=50px"로 설정하면 pin-spacer의 전체 높이는 원래 요소의 높이 + 50px가 됩니다.예를 들어:만약.pinned - image의 높이가 800 px이라면pin - spacer의 최종 높이는 850 px(800 px + 50 px) 가 됩니다
-      //  pinSpacing: true,
-
-      // end: "+=600px", // 필요한 경우 스크롤 길이 설정
-      // anticipatePin: 1
-
-    });
+  // 텍스트 아래로 이동하는 패럴랙스
+  gsap.to(".banner-title", {
+    yPercent: 30, // 양수값으로 변경하여 아래로 이동
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".banner",
+      start: "top top",
+      end: "bottom top",
+      scrub: 0.5
+    }
   });
 
 })();
 
 
 
-
-
-
-
-// AOS 초기화
-// AOS.init();
-
-// window.addEventListener('scroll', function () {
-//   const scroll = Math.min(window.pageYOffset || document.documentElement.scrollTop, 530);
-//   const zoomContent = document.querySelectorAll('.zoom__content');
-
-//   zoomContent.forEach(content => {
-//     content.style.transform = `translate(-50%, -50%) scale(${(100 + scroll/5)/100})`;
-//   });
-// });
 

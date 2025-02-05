@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			}, 30);
 		});
 	}
-
+	
 	// 서브메뉴 토글
 	$mobileMenu.addEventListener("click", function (e) {
 		let target = e.target;
@@ -81,4 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			}
 		}
 	});
+
+
+	 
 });
