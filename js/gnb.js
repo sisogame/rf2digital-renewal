@@ -31,6 +31,9 @@ document.addEventListener("DOMContentLoaded", function () {
 			});
 		});
 	});
+
+
+
 });
 
 // 모바일 메뉴
@@ -45,13 +48,16 @@ document.addEventListener("DOMContentLoaded", function () {
 		document.querySelector(".menu-toggle").addEventListener("click", function () {
 			const $logo = document.querySelector(".logo");
 			const $bg = document.querySelector(".header .bg");
+
 	
 			$logo.classList.toggle("on");
 			if ($logo.classList.contains("on")) {
-				// $logo.querySelector("img").setAttribute("src","../img/logo-sub.png");
+				//    pc,모바일 로고가 메인, 서브 모두 같은 경우 (만약 색상이 다르게 표현 된다면 $logo.~ 라인은 주석 처리 할 것 - 20250206 ley)
+				$logo.querySelector("img").setAttribute("src","../img/logo-sub.png");
 				$bg.classList.add("on");
 			} else {
-				// $logo.querySelector("img").setAttribute("src","../img/logo.png");
+				//    pc,모바일 로고가 메인, 서브 모두 같은 경우 (만약 색상이 다르게 표현 된다면 $logo.~ 라인은 주석 처리 할 것 - 20250206 ley)
+				$logo.querySelector("img").setAttribute("src","../img/logo.png");
 				$bg.classList.remove("on");
 			}
 	
@@ -62,6 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		});
 	}
 	
+
 	// 서브메뉴 토글
 	$mobileMenu.addEventListener("click", function (e) {
 		let target = e.target;
@@ -82,6 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		}
 	});
 
-
 	 
 });
+
+

@@ -151,3 +151,17 @@ if (subBannerElement) {
 
 
 
+// (function () {
+//     var image = document.getElementById('myImage');
+
+//     image.addEventListener('click', function(){
+//         changeImage();
+//     });
+
+//     function changeImage(){
+//         image.src = '../img/logo-sub.png';
+//     }
+//   })();
+
+
+
