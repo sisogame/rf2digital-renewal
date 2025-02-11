@@ -107,8 +107,10 @@
     .max-width-adaptive,
     .max-width-adaptive-lg,
     .max-width-adaptive-xl {
-        max-width: 1200px;
+        max-width: 100% !important;
+        /* min-width: 1200px; */
     }
+
 }
 
 @media (min-width: 80rem) {
