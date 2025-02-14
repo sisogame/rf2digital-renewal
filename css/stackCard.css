@@ -103,7 +103,7 @@
 
 @media (min-width: 64rem) {
 
-    .max-width-adaptive-md,
+    /* .max-width-adaptive-md, */
     .max-width-adaptive,
     .max-width-adaptive-lg,
     .max-width-adaptive-xl {
